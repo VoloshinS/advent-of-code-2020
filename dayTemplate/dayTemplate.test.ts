@@ -1,5 +1,3 @@
-const { test, expect } = require("@jest/globals");
-
 import { func1, func2 } from './dayTemplate';
 import { testInput, input } from './dayTemplate.input';
 
