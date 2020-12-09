@@ -7,9 +7,9 @@ generateTemplateFiles([
     entry: {
       folderPath: './scripts/templates/dayTemplate/',
     },
-    stringReplacers: ['dayTemplate'],
+    stringReplacers: ['dayTemplate', 'adventOfCodeYear'],
     output: {
-      path: './2019/dayTemplate(camelCase)',
+      path: './adventOfCodeYear(camelCase)/dayTemplate(camelCase)',
       pathAndFileNameDefaultCase: '(camelCase)',
     },
     onComplete: (results) => {
