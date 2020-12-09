@@ -22,6 +22,7 @@ const dataPreparator = (str: string): Instruction[] => {
 
 
 // Puzzle 1
+// What is the value of the accumulator after the program completes the?
 
 const executeProgram = (
   { operation, argument, index }: Instruction,
