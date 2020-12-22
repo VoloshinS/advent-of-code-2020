@@ -12,7 +12,7 @@ describe('day22', () => {
   describe('func2', () => {
     test('should work as expected', () => {
       expect(func2(testInput)).toBe(291);
-      expect(func2(input)).toBe(undefined);
+      expect(func2(input)).toBe(34173);
     });
   });
 });
