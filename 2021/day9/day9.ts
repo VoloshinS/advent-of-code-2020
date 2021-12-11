@@ -1,3 +1,5 @@
+import { wrapMatrix } from "../../utils/matrix";
+
 const dataPreparator = (str: string) => {
   return str.split('\n').map(e => e.split('').map(e => parseInt(e)));
 };
@@ -6,9 +8,7 @@ const dataPreparator = (str: string) => {
 export const func1 = (input: string) => {
   const prepared = dataPreparator(input);
   let riskLevels = 0;
-  const wrapped = prepared.map(l => [9, ...l, 9]);
-  const emptyLine = [...wrapped[0]].fill(9);
-  const toWork = [emptyLine, ...wrapped, emptyLine];
+  const toWork = wrapMatrix(prepared, 9)
 
   for (let i = 1; i < toWork.length - 1; i++) {
     for (let j = 1; j < toWork[0].length - 1; j++) {
@@ -43,9 +43,7 @@ const getBasinSize = (i: number, j: number, field: (string|number)[][], alreadyC
 // Puzzle 2
 export const func2 = (input: string) => {
   const prepared = dataPreparator(input);
-  const wrapped = prepared.map(l => ['.', ...l.map(e => e === 9 ? '.' : '#'), '.']);
-  const emptyLine = [...wrapped[0]].fill('.');
-  const toWork = [emptyLine, ...wrapped, emptyLine];
+  const toWork = wrapMatrix(prepared.map(l => ['.', ...l.map(e => e === 9 ? '.' : '#'), '.']), '.')
   let basins = [];
   let alreadyChecked = {};
 
